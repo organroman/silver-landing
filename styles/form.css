@@ -252,7 +252,7 @@ textarea.input {
   flex: 1;
   min-height: 240px;
   border-radius: var(--radius-sm);
-  background: var(--surface-placeholder) url(../assets/images/office-window-2.jpg) center 45% / cover no-repeat;
+  background: var(--surface-placeholder) url(../assets/images/view-from-office.jpg) center 45% / cover no-repeat;
 }
 .apply__contacts {
   display: flex;

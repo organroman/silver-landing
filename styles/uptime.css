@@ -13,7 +13,7 @@
   justify-content: flex-end;
   min-height: clamp(480px, 48vw, 720px);
   border-radius: var(--radius-sm);
-  background: var(--sb-ink) url(../assets/images/office-hitech.jpg) center 40% / cover no-repeat;
+  background: var(--sb-ink) url(../assets/images/terrace-panorama.jpg) 46% center / cover no-repeat;
   color: var(--text-on-brand);
 }
 .uptime__photo::before {
