@@ -1,0 +1,79 @@
+/* Two crossing bands with endlessly scrolling text.
+   js/animations.js clones .ticker__group to fill the band and sets --copies / --duration;
+   without JS the bands just show one static group. */
+.ticker {
+  position: relative;
+  height: clamp(180px, 17vw, 250px);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: clamp(16px, 2vw, 32px);
+  overflow: hidden;
+  pointer-events: none;
+}
+.ticker__band {
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  top: 50%;
+  height: 48px;
+  margin-top: -24px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--text-on-brand);
+}
+.ticker__band--ink {
+  background: var(--sb-ink);
+  transform: rotate(4.2deg);
+}
+.ticker__band--blue {
+  background: var(--sb-blue);
+  transform: rotate(-4.8deg);
+}
+
+.ticker__track {
+  display: flex;
+  width: max-content;
+  --copies: 2;
+  --duration: 30s;
+  animation: ticker-scroll var(--duration) linear infinite;
+}
+.ticker__band--reverse .ticker__track {
+  animation-direction: reverse;
+}
+.ticker__group {
+  display: flex;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ticker__group li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-right: 14px;
+  white-space: nowrap;
+  font: var(--type-nav);
+  text-transform: uppercase;
+}
+.ticker__group li::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background: url(../assets/icons/sparkle.svg) center / contain no-repeat;
+}
+
+/* The track holds N identical groups; shifting by one group width loops seamlessly. */
+@keyframes ticker-scroll {
+  to {
+    transform: translateX(calc(-100% / var(--copies)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker__track {
+    animation: none;
+  }
+}

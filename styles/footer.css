@@ -1,0 +1,92 @@
+.footer {
+  margin: 8px 0 clamp(12px, 2.2vw, 32px);
+  padding: clamp(24px, 3.4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--sb-ink);
+  color: var(--text-on-brand);
+}
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px 48px;
+}
+.footer .sb-logo {
+  width: 191.5px;
+  height: 30px;
+}
+.footer__cols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 64px;
+}
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font: var(--type-body);
+}
+.footer a {
+  color: var(--text-on-brand);
+}
+.footer a:hover {
+  color: var(--sb-blue-sky);
+}
+.footer .footer__muted {
+  color: var(--text-on-brand-muted);
+}
+.footer .footer__muted:hover {
+  color: var(--text-on-brand);
+}
+.footer__address {
+  font: var(--type-body);
+  color: var(--text-on-brand-muted);
+}
+
+/* Phones only: floating call-to-action bar (the header CTA is hidden at this width) */
+.sticky-bar {
+  display: none;
+}
+@media (max-width: 720px) {
+  body {
+    padding-bottom: 76px; /* keeps the footer clear of the bar */
+  }
+  .sticky-bar {
+    position: fixed;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    z-index: 50;
+    display: flex;
+    gap: 6px;
+    padding: 6px;
+    border-radius: var(--radius-pill);
+    background: var(--surface-glass-light);
+    backdrop-filter: var(--blur-glass);
+    -webkit-backdrop-filter: var(--blur-glass);
+    box-shadow: var(--ring-glass);
+  }
+  .sticky-bar > * {
+    flex: 1 1 0;
+    min-width: 0;
+    height: var(--control-h);
+    border-radius: var(--radius-pill);
+  }
+  .sticky-bar__call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--ring-brand);
+    color: var(--sb-blue);
+    font: var(--type-body);
+    white-space: nowrap;
+  }
+  .sticky-bar__call:hover {
+    color: var(--sb-blue);
+    background: var(--sb-blue-mist);
+  }
+}

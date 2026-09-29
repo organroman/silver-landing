@@ -1,0 +1,105 @@
+#steps {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.steps__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 40px 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-right: 24px;
+  counter-increment: step;
+}
+.step:last-child {
+  padding-right: 0;
+}
+/* numbered disc followed by a connector line to the next step */
+.step__marker {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.step__marker::before {
+  content: counter(step);
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-round);
+  background: var(--sb-blue);
+  color: var(--text-on-brand);
+  font: 600 28px / 1 var(--font-sans);
+}
+.step__marker::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--sb-blue);
+}
+.step:last-child .step__marker::before {
+  background: var(--sb-ink); /* final step */
+}
+.step:last-child .step__marker::after {
+  display: none;
+}
+.step__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.step h3 {
+  margin: 0;
+  font: 600 22px / 1.2 var(--font-sans);
+  letter-spacing: -0.01em;
+}
+.step p {
+  margin: 0;
+  font: var(--type-body);
+  text-wrap: pretty;
+}
+
+/* Phones: vertical timeline — number on the left, text beside it, line running down to the next step */
+@media (max-width: 720px) {
+  .steps__list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    column-gap: 16px;
+    padding: 0;
+  }
+  .step__marker {
+    flex-direction: column;
+    gap: 0;
+  }
+  .step__marker::before {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+  .step__marker::after {
+    flex: 1;
+    width: 1px;
+    height: auto;
+    margin: 8px 0; /* small gap above and below, so the line doesn't touch the discs */
+  }
+  .step__body {
+    padding: 11px 0 32px; /* top centres the title on the 48px disc; bottom is the gap to the next step (inside the row, so the line spans it) */
+  }
+  .step:last-child .step__body {
+    padding-bottom: 0;
+  }
+}

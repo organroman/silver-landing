@@ -1,0 +1,63 @@
+:root{
+/* Brand — Pantone 2925 C + Pantone Black C (chips present in the Figma file) */
+--sb-blue:#009BDD;
+--sb-blue-logo:#4FA3DA;
+--sb-blue-metro:#40A2DA;
+--sb-blue-sky:#7CD0FF;
+--sb-blue-pale:#B7E5FF;
+--sb-blue-mist:#EEF7FC;
+--sb-ink:#2D2926;
+--sb-black:#000000;
+--sb-white:#FFFFFF;
+--sb-paper:#FDFDFD;
+/* Neutrals */
+--sb-gray-25:#FBFBFB;
+--sb-gray-50:#F7F7F7;
+--sb-gray-100:#F2F2F2;
+--sb-gray-150:#ECECEC;
+--sb-gray-200:#EBEAEA;
+--sb-gray-250:#E7E6E6;
+--sb-gray-300:#D9D9D9;
+--sb-gray-500:#A4A4A4;
+--sb-gray-700:#4F4F4F;
+--sb-glass-line:#F2F4F4;
+/* Floor-plan / map palette */
+--sb-plan-green:#B9FF8B;
+--sb-plan-green-line:#C3E27C;
+--sb-plan-lime:#F0FFAB;
+--sb-plan-leaf:#A2D17E;
+--sb-plan-yellow:#FFE88C;
+--sb-plan-orange:#FF8522;
+--sb-plan-amber:#DE7700;
+--sb-plan-pink:#FFB7E5;
+--sb-plan-cyan:#8BF5FF;
+--sb-plan-rose:#E27C7C;
+--sb-plan-cobalt:#3476E9;
+--sb-marker-red:#E62B2D;
+
+/* Semantic aliases */
+--text-primary:var(--sb-ink);
+--text-strong:var(--sb-black);
+--text-muted:rgba(45,41,38,.7);
+--text-placeholder:rgba(45,41,38,.6);
+--text-on-brand:var(--sb-paper);
+--text-on-brand-muted:rgba(253,253,253,.6);
+--text-link:var(--sb-blue);
+--surface-page:var(--sb-white);
+--surface-card:var(--sb-gray-50);
+--surface-card-brand:var(--sb-blue-pale);
+--surface-input:var(--sb-gray-25);
+--surface-placeholder:var(--sb-gray-300);
+--surface-brand:var(--sb-blue);
+--surface-dark:var(--sb-ink);
+--surface-glass:rgba(253,253,253,.1);
+--overlay-photo:rgba(0,0,0,.4);
+--border-input:rgba(0,0,0,.4);
+--border-tabs:rgba(0,155,221,.3);
+--border-brand:var(--sb-blue);
+--border-strong:var(--sb-black);
+--border-glass:var(--sb-glass-line);
+--scroll-track:var(--sb-gray-250);
+--scroll-thumb:var(--sb-gray-500);
+--gradient-protect:linear-gradient(180deg,rgba(0,0,0,0) 0%,#000 100%);/* @kind color */
+}

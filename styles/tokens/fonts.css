@@ -1,0 +1,12 @@
+/* Myriad Pro — self-hosted Regular (fonts/). Only the 400 face is declared, so 600/700 requests
+   match it and the browser synthesizes bold from real Myriad glyphs. Add Semibold/Bold faces when files arrive. */
+@font-face {
+  font-family: "Myriad Pro";
+  src:
+    url("../../assets/fonts/MyriadProRegular.woff") format("woff"),
+    url("../../assets/fonts/MyriadProRegular.otf") format("opentype"),
+    url("../../assets/fonts/MyriadProRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

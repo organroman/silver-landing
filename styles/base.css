@@ -1,0 +1,148 @@
+/* Landing-specific tokens. The design-system tokens in tokens/ are left untouched;
+   anything the landing needs on top of them lives here. */
+:root {
+  /* colours on dark / brand-blue backgrounds */
+  --surface-glass-light: rgba(253, 253, 253, 0.85);
+  --divider-on-brand: rgba(253, 253, 253, 0.4);
+  --border-on-brand: rgba(253, 253, 253, 0.5);
+  /* 1px inset outlines and rules (same idea as --ring-* in spacing.css) */
+  --ring-on-brand: inset 0 0 0 1px var(--border-on-brand);
+  --ring-error: inset 0 0 0 1px var(--sb-marker-red);
+  --rule-top: inset 0 1px 0 var(--border-tabs);
+  --rule-bottom: inset 0 -1px 0 var(--border-tabs);
+  /* photo overlays that keep text readable */
+  --scrim-hero: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0.55) 68%, #000 100%);
+  --scrim-card: linear-gradient(180deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.88) 100%);
+  /* type and sizing */
+  --ls-display: -0.025em; /* large headlines; --ls-tight (-0.02em) is for smaller ones */
+  --control-h: 45px; /* inputs, pills and the compact buttons */
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--sb-white);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  color: var(--sb-blue);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--sb-ink);
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: var(--sb-blue);
+  color: var(--text-on-brand);
+  font: var(--type-nav, 600 16px/1 var(--font-sans));
+}
+.btn:hover {
+  background: var(--sb-ink);
+  color: var(--text-on-brand);
+}
+
+/* White button for use on brand-blue backgrounds */
+.btn--light {
+  background: var(--sb-white);
+  color: var(--sb-blue);
+  transition: background var(--dur-fast);
+}
+.btn--light:hover {
+  background: var(--sb-blue-mist);
+  color: var(--sb-blue);
+}
+
+/* Secondary: transparent with a glass ring, for use on dark/photo backgrounds */
+.btn--outline {
+  background: transparent;
+  box-shadow: var(--ring-glass);
+  color: var(--text-on-brand);
+}
+.btn--outline:hover {
+  background: var(--surface-glass);
+  color: var(--text-on-brand);
+}
+
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* Blue disc with a white pictogram. Default 72px; --md 44px, --sm 40px.
+   --soft is a pale disc with a blue pictogram (uses the --glyph-blue variant of the icon).
+   .sb-ficon (feature pictograms) have built-in padding, so they are sized larger than UI glyphs. */
+.icon-disc {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-round);
+  background: var(--sb-blue);
+}
+.icon-disc .sb-ficon {
+  width: 58px;
+  height: 58px;
+}
+.icon-disc__glyph {
+  width: 34px;
+  height: 34px;
+  background: center / contain no-repeat;
+  background-image: var(--glyph);
+}
+.icon-disc--md {
+  width: 44px;
+  height: 44px;
+}
+.icon-disc--sm {
+  width: 40px;
+  height: 40px;
+}
+.icon-disc--md .icon-disc__glyph,
+.icon-disc--sm .icon-disc__glyph {
+  width: 20px;
+  height: 20px;
+}
+.icon-disc--soft {
+  background: var(--sb-blue-mist);
+}
+.icon-disc--soft .icon-disc__glyph {
+  background-image: var(--glyph-blue);
+}
+.icon-disc__glyph--wifi { --glyph: url(../assets/icons/wifi.svg); }
+.icon-disc__glyph--droplet { --glyph: url(../assets/icons/droplet.svg); }
+.icon-disc__glyph--clock { --glyph: url(../assets/icons/clock.svg); }
+.icon-disc__glyph--bus { --glyph: url(../assets/icons/bus.svg); }
+.icon-disc__glyph--parking { --glyph: url(../assets/icons/parking.svg); }
+.icon-disc__glyph--store { --glyph: url(../assets/icons/building-store.svg); }
+.icon-disc__glyph--phone { --glyph: url(../assets/icons/phone.svg); --glyph-blue: url(../assets/icons/phone-blue.svg); }
+.icon-disc__glyph--pin { --glyph: url(../assets/icons/map-pin.svg); --glyph-blue: url(../assets/icons/map-pin-blue.svg); }
+.icon-disc__glyph--world { --glyph: url(../assets/icons/world.svg); --glyph-blue: url(../assets/icons/world-blue.svg); }

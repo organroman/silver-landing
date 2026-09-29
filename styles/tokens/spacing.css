@@ -1,0 +1,49 @@
+:root {
+  /* Spacing — values used in the file's auto-layouts */
+  --sp-4: 4px;
+  --sp-6: 6px;
+  --sp-8: 8px;
+  --sp-10: 10px;
+  --sp-12: 12px;
+  --sp-13: 13px;
+  --sp-14: 14px;
+  --sp-16: 16px;
+  --sp-18: 18px;
+  --sp-20: 20px;
+  --sp-24: 24px;
+  --sp-30: 30px;
+  --sp-32: 32px;
+  --sp-34: 34px;
+  --sp-64: 64px;
+  --sp-120: 120px;
+  /* Layout */
+  --page-width: 1440px;
+  --content-width: 1312px;
+  --page-gutter: 64px;
+  --page-gutter-tablet: 32px;
+  --page-gutter-mobile: 16px;
+  --col-4: 310px;
+  --col-3: 421px;
+  --col-2: 644px;
+  --col-news: 533px;
+  --header-height: 32px;
+  --hero-height: 500px;
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-pill: 40px;
+  --radius-chip: 80px;
+  --radius-round: 100px;
+  /* Borders (Figma strokes are inside → inset shadows) */
+  --ring-input: inset 0 0 0 1px var(--border-input);
+  --ring-tabs: inset 0 0 0 1px var(--border-tabs);
+  --ring-brand: inset 0 0 0 1px var(--border-brand);
+  --ring-strong: inset 0 0 0 1px var(--border-strong);
+  --ring-glass: inset 0 0 0 1px var(--border-glass);
+  /* Effects */
+  --blur-glass: blur(30px); /* @kind other */
+  --shadow-none: none; /* @kind shadow */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  --dur-fast: 150ms; /* @kind other */
+  --dur-base: 250ms; /* @kind other */
+}

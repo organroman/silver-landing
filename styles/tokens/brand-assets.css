@@ -1,0 +1,36 @@
+/* Brand asset utility classes — url()s resolve relative to this file. */
+.sb-logo {
+  display: block;
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.sb-logo--white {
+  background-image: url(../../assets/logo/logo-white.svg);
+}
+.sb-pattern {
+  background: url(../../assets/images/pattern-arches.png) top left/28px 31px
+    repeat;
+}
+.sb-ficon {
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.sb-ficon--generator {
+  background-image: url(../../assets/icons/generator.svg);
+}
+.sb-ficon--keycard {
+  background-image: url(../../assets/icons/keycard.svg);
+}
+.sb-uicon {
+  display: inline-block;
+  flex-shrink: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.sb-uicon--arrow {
+  background-image: url(../../assets/icons/arrow-right-small.svg);
+}

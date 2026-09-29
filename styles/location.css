@@ -1,0 +1,93 @@
+#location {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: stretch;
+}
+.location__map {
+  flex: 5 1 380px;
+  position: relative;
+  display: block;
+  min-height: clamp(320px, 38vw, 560px);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--surface-placeholder) url(../assets/images/map-location.jpg)
+    52% center / cover no-repeat;
+}
+.location__map-link {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 20px 8px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--sb-white);
+  color: var(--text-primary);
+  font: var(--type-body);
+  transition: background var(--dur-fast);
+}
+.location__map:hover .location__map-link {
+  background: var(--sb-blue-mist);
+}
+.circle-arrow {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-round);
+  background: var(--sb-blue);
+}
+.circle-arrow .sb-uicon {
+  width: 6px;
+  height: 12px;
+}
+
+.location__info {
+  flex: 5 1 380px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  padding: clamp(24px, 3.4vw, 48px);
+  border-radius: var(--radius-sm);
+  background: var(--sb-blue-mist);
+}
+.location__title {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.location__address {
+  font: var(--type-lead);
+}
+.location__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.location__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.location__list li > span:last-child {
+  padding-top: 9px; /* centres the first text line on the 40px disc */
+  font: var(--type-body);
+  text-wrap: pretty;
+}
+
+.location__photo {
+  flex: 3 1 260px;
+  min-height: clamp(320px, 38vw, 560px);
+  border-radius: var(--radius-sm);
+  background: var(--surface-placeholder) url(../assets/images/building-sky.jpg)
+    center / cover no-repeat;
+}
