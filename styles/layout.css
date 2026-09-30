@@ -87,6 +87,22 @@
 /* Tablets and phones (below lg, 1024px): the hero is tall and narrow, so the wide photo is scaled to its
    height and only a thin slice shows, mostly sky and tower tops. Zoom in a little and anchor to the
    bottom so the glass building is what you see. */
+@media (max-width: 1599px) {
+  /* the text block takes a larger share of the hero here, so the dark fade starts higher and
+     reaches solid black only at the bottom, keeping the chip and headline on dark */
+  .hero::before {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0) 15%,
+      rgba(0, 0, 0, 0.4) 30%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.8) 75%,
+      #000 100%
+    );
+  }
+}
+
 @media (max-width: 1023px) {
   .hero {
     background-size: auto 125%;
@@ -110,7 +126,9 @@
   }
   .hero__body {
     padding-left: calc(var(--bleed) + 48px);
-    max-width: calc(880px + var(--bleed)); /* keeps the text column at its usual width */
+    max-width: calc(
+      880px + var(--bleed)
+    ); /* keeps the text column at its usual width */
   }
 }
 
@@ -194,4 +212,3 @@
   font: 400 var(--fs-load) / var(--lh-body) var(--font-sans);
   text-wrap: pretty;
 }
-
