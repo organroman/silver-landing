@@ -47,6 +47,12 @@
     done.focus();
   };
 
+  const trackLead = () => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: "lead_sent", form_id: form.id });
+    if (typeof window.fbq === "function") window.fbq("track", "Lead");
+  };
+
   // Local preview (no backend configured yet): show the success state so it can be designed/tested.
   const isLocal = ["localhost", "127.0.0.1", ""].includes(location.hostname);
 
@@ -85,6 +91,7 @@
         body: data,
       });
       if (!res.ok) throw new Error(res.status);
+      trackLead();
       showDone();
     } catch {
       setStatus(msg("error"), true);
