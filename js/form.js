@@ -53,9 +53,6 @@
     if (typeof window.fbq === "function") window.fbq("track", "Lead");
   };
 
-  // Local preview (no backend configured yet): show the success state so it can be designed/tested.
-  const isLocal = ["localhost", "127.0.0.1", ""].includes(location.hostname);
-
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     tried = true;
@@ -71,7 +68,6 @@
     if (form.website.value) return showDone(); // honeypot tripped: pretend success, send nothing
 
     if (!cfg.formEndpoint) {
-      if (isLocal) { console.warn("SB_CONFIG.formEndpoint is empty — nothing was sent."); return showDone(); }
       setStatus(msg("unconfigured"), true);
       return;
     }
