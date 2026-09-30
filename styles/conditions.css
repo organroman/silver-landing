@@ -134,3 +134,11 @@
   font: var(--type-body-strong);
   color: var(--sb-blue);
 }
+
+.section__note {
+  margin: 0;
+  max-width: 600px;
+  font: 400 var(--fs-body) / var(--lh-body) var(--font-sans);
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
