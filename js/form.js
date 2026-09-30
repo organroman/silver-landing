@@ -41,6 +41,7 @@
   form.addEventListener("change", onEdit);
 
   const showDone = () => {
+    setStatus("");
     form.hidden = true;
     done.hidden = false;
     done.focus();
